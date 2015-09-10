@@ -4,10 +4,6 @@ var { connect } = require('react-redux');
 var Input = require('./Input');
 var { addTodo } = require('../actions/TodoActions');
 
-@connect(
-  undefined,
-  (dispatch) => bindActionCreators({ addTodo }, dispatch)
-)
 class AddTodoInputContainer extends React.Component {
   render() {
     const { addTodo, ...rest } = this.props;
@@ -17,4 +13,7 @@ class AddTodoInputContainer extends React.Component {
   }
 }
 
-module.exports = AddTodoInputContainer;
+module.exports = connect(
+  undefined,
+  (dispatch) => bindActionCreators({ addTodo }, dispatch)
+)(AddTodoInputContainer);

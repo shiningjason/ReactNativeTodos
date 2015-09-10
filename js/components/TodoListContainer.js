@@ -4,10 +4,6 @@ var { connect } = require('react-redux');
 var TodoList = require('./TodoList');
 var { toggleTodo, editTodo, deleteTodo } = require('../actions/TodoActions');
 
-@connect(
-  (state) => ({ todos: state.todos }),
-  (dispatch) => bindActionCreators({ toggleTodo, editTodo, deleteTodo }, dispatch)
-)
 class TodoListContainer extends React.Component {
   render() {
     return (
@@ -21,4 +17,7 @@ class TodoListContainer extends React.Component {
   }
 }
 
-module.exports = TodoListContainer;
+module.exports = connect(
+  (state) => ({ todos: state.todos }),
+  (dispatch) => bindActionCreators({ toggleTodo, editTodo, deleteTodo }, dispatch)
+)(TodoListContainer);
