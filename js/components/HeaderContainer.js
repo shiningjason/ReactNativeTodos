@@ -1,5 +1,5 @@
 var React = require('react-native');
-var { connect } = require('react-redux');
+var { connect } = require('react-redux/native');
 var Header = require('./Header');
 
 class HeaderContainer extends React.Component {

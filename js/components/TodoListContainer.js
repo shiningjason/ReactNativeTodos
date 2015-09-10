@@ -1,6 +1,6 @@
 var React = require('react-native');
 var { bindActionCreators } = require('redux');
-var { connect } = require('react-redux');
+var { connect } = require('react-redux/native');
 var TodoList = require('./TodoList');
 var { toggleTodo, editTodo, deleteTodo } = require('../actions/TodoActions');
 
