@@ -3,7 +3,7 @@ var Input = require('./Input');
 
 const ESCAPE_KEY = 27;
 
-export default class TodoItem extends React.Component {
+class TodoItem extends React.Component {
 
   static propTypes = {
     content: React.PropTypes.string.isRequired,
@@ -114,3 +114,5 @@ const styles = {
     width: '100%'
   }
 };
+
+module.exports = TodoItem;

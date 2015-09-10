@@ -8,7 +8,7 @@ var { toggleTodo, editTodo, deleteTodo } = require('../actions/TodoActions');
   (state) => ({ todos: state.todos }),
   (dispatch) => bindActionCreators({ toggleTodo, editTodo, deleteTodo }, dispatch)
 )
-export default class TodoListContainer extends React.Component {
+class TodoListContainer extends React.Component {
   render() {
     return (
       <TodoList
@@ -20,3 +20,5 @@ export default class TodoListContainer extends React.Component {
     );
   }
 }
+
+module.exports = TodoListContainer;

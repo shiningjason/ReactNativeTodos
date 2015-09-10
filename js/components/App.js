@@ -4,7 +4,7 @@ var HeaderContainer = require('./HeaderContainer');
 var AddTodoInputContainer = require('./AddTodoInputContainer');
 var TodoListContainer = require('./TodoListContainer');
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div style={styles.container}>
@@ -31,3 +31,5 @@ const styles = {
     marginBottom: 8
   }
 };
+
+module.exports = App;

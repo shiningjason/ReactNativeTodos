@@ -2,7 +2,7 @@ var React = require('react');
 
 const ENTER_KEY = 13;
 
-export default class Input extends React.Component {
+class Input extends React.Component {
 
   constructor(props) {
     super(props);
@@ -58,3 +58,5 @@ const styles = {
     fontSize: 15
   }
 };
+
+module.exports = Input;

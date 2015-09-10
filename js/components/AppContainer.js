@@ -7,7 +7,7 @@ var reducers = require('../reducers');
 const composedReducer = combineReducers(reducers);
 const store = createStore(composedReducer);
 
-export default class AppContainer extends React.Component {
+class AppContainer extends React.Component {
   render() {
     return (
       <Provider store={store}>
@@ -16,3 +16,5 @@ export default class AppContainer extends React.Component {
     );
   }
 }
+
+module.exports = AppContainer;

@@ -8,7 +8,7 @@ var { addTodo } = require('../actions/TodoActions');
   undefined,
   (dispatch) => bindActionCreators({ addTodo }, dispatch)
 )
-export default class AddTodoInputContainer extends React.Component {
+class AddTodoInputContainer extends React.Component {
   render() {
     const { addTodo, ...rest } = this.props;
     return (
@@ -16,3 +16,5 @@ export default class AddTodoInputContainer extends React.Component {
     );
   }
 }
+
+module.exports = AddTodoInputContainer;

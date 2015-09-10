@@ -2,7 +2,7 @@ var React = require('react');
 var Immutable = require('immutable');
 var TodoItem = require('./TodoItem');
 
-export default class TodoList extends React.Component {
+class TodoList extends React.Component {
 
   static propTypes = {
     todos: React.PropTypes.instanceOf(Immutable.List).isRequired,
@@ -44,3 +44,5 @@ const styles = {
     borderBottom: '1px solid rgba(0,0,0,0.12)'
   }
 };
+
+module.exports = TodoList;

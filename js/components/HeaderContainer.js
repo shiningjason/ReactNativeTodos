@@ -5,10 +5,12 @@ var Header = require('./Header');
 @connect((state) => ({
   todoNumber: state.todos.count((todo) => !todo.completed)
 }))
-export default class HeaderContainer extends React.Component {
+class HeaderContainer extends React.Component {
   render() {
     return (
       <Header {...this.props} />
     );
   }
 }
+
+module.exports = HeaderContainer;

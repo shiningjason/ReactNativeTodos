@@ -35,7 +35,7 @@ const DEFAULT_TODOS = [
   { content: '週會會議記錄', completed: true }
 ].map(_createTodoRecord);
 
-export default (state = Immutable.List(DEFAULT_TODOS), action) => {
+module.exports = (state = Immutable.List(DEFAULT_TODOS), action) => {
   switch (action.type) {
     case ActionTypes.ADD_TODO:
       return _addTodo(state, action.content);

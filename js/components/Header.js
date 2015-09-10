@@ -1,6 +1,6 @@
 var React = require('react');
 
-export default class Header extends React.Component {
+class Header extends React.Component {
 
   static propTypes = {
     username: React.PropTypes.string,
@@ -40,3 +40,5 @@ const styles = {
     color: 'rgba(0,0,0,0.54)'
   }
 };
+
+module.exports = Header;

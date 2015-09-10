@@ -1,22 +1,22 @@
 var ActionTypes = require('../constants/ActionTypes');
 
-export const addTodo = (content) => ({
+module.exports.addTodo = (content) => ({
   type: ActionTypes.ADD_TODO,
   content
 });
 
-export const editTodo = (id, content) => ({
+module.exports.editTodo = (id, content) => ({
   type: ActionTypes.EDIT_TODO,
   id,
   content
 });
 
-export const toggleTodo = (id) => ({
+module.exports.toggleTodo = (id) => ({
   type: ActionTypes.TOGGLE_TODO,
   id
 });
 
-export const deleteTodo = (id) => ({
+module.exports.deleteTodo = (id) => ({
   type: ActionTypes.DELETE_TODO,
   id
 });
