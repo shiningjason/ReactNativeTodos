@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react-native');
 
 const ENTER_KEY = 13;
 

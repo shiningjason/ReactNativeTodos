@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react-native');
 var Immutable = require('immutable');
 var TodoItem = require('./TodoItem');
 

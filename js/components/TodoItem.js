@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react-native');
 var Input = require('./Input');
 
 const ESCAPE_KEY = 27;

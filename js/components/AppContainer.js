@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react-native');
 var { createStore, combineReducers } = require('redux');
 var { Provider } = require('react-redux');
 var App = require('./App');

@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react-native');
 var { connect } = require('react-redux');
 var Header = require('./Header');
 

@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react-native');
 
 class Header extends React.Component {
   render() {

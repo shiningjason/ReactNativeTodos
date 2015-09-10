@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react-native');
 var shortid = require('shortid');
 var HeaderContainer = require('./HeaderContainer');
 var AddTodoInputContainer = require('./AddTodoInputContainer');
