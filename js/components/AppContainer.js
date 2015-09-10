@@ -1,8 +1,8 @@
-import React from 'react';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-import App from './App';
-import * as reducers from '../reducers';
+var React = require('react');
+var { createStore, combineReducers } = require('redux');
+var { Provider } = require('react-redux');
+var App = require('./App');
+var reducers = require('../reducers');
 
 const composedReducer = combineReducers(reducers);
 const store = createStore(composedReducer);

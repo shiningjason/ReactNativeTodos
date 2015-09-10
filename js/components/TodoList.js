@@ -1,6 +1,6 @@
-import React from 'react';
-import Immutable from 'immutable';
-import TodoItem from './TodoItem';
+var React = require('react');
+var Immutable = require('immutable');
+var TodoItem = require('./TodoItem');
 
 export default class TodoList extends React.Component {
 

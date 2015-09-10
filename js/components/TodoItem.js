@@ -1,5 +1,5 @@
-import React from 'react';
-import Input from './Input';
+var React = require('react');
+var Input = require('./Input');
 
 const ESCAPE_KEY = 27;
 

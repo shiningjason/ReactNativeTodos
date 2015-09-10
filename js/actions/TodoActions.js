@@ -1,4 +1,4 @@
-import ActionTypes from '../constants/ActionTypes';
+var ActionTypes = require('../constants/ActionTypes');
 
 export const addTodo = (content) => ({
   type: ActionTypes.ADD_TODO,

@@ -1,8 +1,8 @@
-import React from 'react';
-import shortid from 'shortid';
-import HeaderContainer from './HeaderContainer';
-import AddTodoInputContainer from './AddTodoInputContainer';
-import TodoListContainer from './TodoListContainer';
+var React = require('react');
+var shortid = require('shortid');
+var HeaderContainer = require('./HeaderContainer');
+var AddTodoInputContainer = require('./AddTodoInputContainer');
+var TodoListContainer = require('./TodoListContainer');
 
 export default class App extends React.Component {
   render() {

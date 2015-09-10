@@ -1,8 +1,8 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import Input from './Input';
-import { addTodo } from '../actions/TodoActions';
+var React = require('react');
+var { bindActionCreators } = require('redux');
+var { connect } = require('react-redux');
+var Input = require('./Input');
+var { addTodo } = require('../actions/TodoActions');
 
 @connect(
   undefined,
