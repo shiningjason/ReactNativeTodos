@@ -17,14 +17,6 @@ class TodoItem extends React.Component {
     this.state = { editable: false };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevState.editable && this.state.editable) {
-      const node = React.findDOMNode(this.refs.editField);
-      node.focus();
-      node.setSelectionRange(node.value.length, node.value.length);
-    }
-  }
-
   toggleEditable() {
     this.setState({
       editable: !this.state.editable
@@ -65,10 +57,10 @@ class TodoItem extends React.Component {
           style={styles.checkbox}
           value={completed}
           onValueChange={onToggle} />
-        <TouchableOpacity style={styles.contentContainer}>
-          <Text
-            style={[styles.content, completed && styles.completed]}
-            onDoubleClick={this.toggleEditable.bind(this)}>
+        <TouchableOpacity
+          style={styles.contentContainer}
+          onLongPress={this.toggleEditable.bind(this)}>
+          <Text style={[styles.content, completed && styles.completed]}>
             {content}
           </Text>
         </TouchableOpacity>
