@@ -63,8 +63,8 @@ class TodoItem extends React.Component {
         <SwitchIOS
           type="checkbox"
           style={styles.checkbox}
-          checked={completed}
-          onChange={onToggle} />
+          value={completed}
+          onValueChange={onToggle} />
         <TouchableOpacity style={styles.contentContainer}>
           <Text
             style={[styles.content, completed && styles.completed]}
