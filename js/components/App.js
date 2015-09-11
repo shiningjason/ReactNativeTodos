@@ -1,4 +1,7 @@
 var React = require('react-native');
+var {
+  View
+} = React;
 var shortid = require('shortid');
 var HeaderContainer = require('./HeaderContainer');
 var AddTodoInputContainer = require('./AddTodoInputContainer');
@@ -7,13 +10,13 @@ var TodoListContainer = require('./TodoListContainer');
 class App extends React.Component {
   render() {
     return (
-      <div style={styles.container}>
+      <View style={styles.container}>
         <HeaderContainer username="Jason" />
-        <div style={styles.inputContainer}>
+        <View style={styles.inputContainer}>
           <AddTodoInputContainer />
-        </div>
+        </View>
         <TodoListContainer />
-      </div>
+      </View>
     );
   }
 }

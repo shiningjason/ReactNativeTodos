@@ -1,13 +1,17 @@
 var React = require('react-native');
+var {
+  Text,
+  View
+} = React;
 
 class Header extends React.Component {
   render() {
     const { username, todoNumber } = this.props;
     return (
-      <header style={styles.container}>
-        <h1 style={styles.title}>Todos</h1>
-        <p style={styles.subTitle}>哈囉，{username}：您今天有 {todoNumber} 條待辦事項！</p>
-      </header>
+      <View style={styles.container}>
+        <Text style={styles.title}>Todos</Text>
+        <Text style={styles.subTitle}>哈囉，{username}：您今天有 {todoNumber} 條待辦事項！</Text>
+      </View>
     );
   }
 }

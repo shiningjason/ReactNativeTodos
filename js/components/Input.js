@@ -1,4 +1,7 @@
 var React = require('react-native');
+var {
+  TextInput
+} = React;
 
 const ENTER_KEY = 13;
 
@@ -36,7 +39,7 @@ class Input extends React.Component {
 
   render() {
     return (
-      <input
+      <TextInput
         {...this.props}
         type="text"
         style={Object.assign({}, styles.textField, this.props.style)}

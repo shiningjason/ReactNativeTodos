@@ -1,4 +1,10 @@
 var React = require('react-native');
+var {
+  SwitchIOS,
+  Text,
+  TouchableOpacity,
+  View
+} = React;
 var Input = require('./Input');
 
 const ESCAPE_KEY = 27;
@@ -52,21 +58,25 @@ class TodoItem extends React.Component {
     }
 
     return (
-      <div style={styles.container}>
-        <input
+      <View style={styles.container}>
+        <SwitchIOS
           type="checkbox"
           style={styles.checkbox}
           checked={completed}
           onChange={onToggle} />
-        <label
-          style={Object.assign({}, styles.content, completed && styles.completed)}
-          onDoubleClick={this.toggleEditable.bind(this)}>
-          {content}
-        </label>
-        <button
-          style={styles.deleteBtn}
-          onClick={onDelete}>X</button>
-      </div>
+        <TouchableOpacity>
+          <Text
+            style={Object.assign({}, styles.content, completed && styles.completed)}
+            onDoubleClick={this.toggleEditable.bind(this)}>
+            {content}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text
+            style={styles.deleteBtn}
+            onClick={onDelete}>X</Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 }

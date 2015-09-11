@@ -1,4 +1,7 @@
 var React = require('react-native');
+var {
+  ListView
+} = React;
 var Immutable = require('immutable');
 var TodoItem = require('./TodoItem');
 
@@ -17,9 +20,9 @@ class TodoList extends React.Component {
     ));
 
     return (
-      <ul style={styles.todoList}>
+      <ListView style={styles.todoList}>
         {todoItems}
-      </ul>
+      </ListView>
     );
   }
 }
