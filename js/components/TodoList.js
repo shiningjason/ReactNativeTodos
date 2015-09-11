@@ -14,11 +14,12 @@ var ds = new ListView.DataSource({
 class TodoList extends React.Component {
   render() {
     const { todos, onToggle, onEdit, onDelete } = this.props;
-    console.log(todos);
 
     return (
       <ListView
         style={styles.todoList}
+        contentInset={{ top: -20 }}
+        contentOffset={{ y: 20 }}
         dataSource={ds.cloneWithRows(todos.toArray())}
         renderRow={(todo) => (
           <View style={styles.todoItem}>
