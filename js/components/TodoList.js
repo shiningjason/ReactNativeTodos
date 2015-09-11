@@ -5,24 +5,26 @@ var {
 var Immutable = require('immutable');
 var TodoItem = require('./TodoItem');
 
+var ds = new ListView.DataSource({
+  rowHasChanged: (r1, r2) => r1 !== r2
+});
+
 class TodoList extends React.Component {
   render() {
     const { todos, onToggle, onEdit, onDelete } = this.props;
-    const todoItems = todos.map((todo) => (
-      <li key={todo.id} style={styles.todoItem}>
-        <TodoItem
-          content={todo.content}
-          completed={todo.completed}
-          onToggle={() => onToggle(todo.id)}
-          onEdit={(content) => onEdit(todo.id, content)}
-          onDelete={() => onDelete(todo.id)} />
-      </li>
-    ));
 
     return (
-      <ListView style={styles.todoList}>
-        {todoItems}
-      </ListView>
+      <ListView
+        style={styles.todoList}
+        dataSource={ds.cloneWithRows(todos.values())}
+        renderRow={(todo) => (
+          <TodoItem
+            content={todo.content}
+            completed={todo.completed}
+            onToggle={() => onToggle(todo.id)}
+            onEdit={(content) => onEdit(todo.id, content)}
+            onDelete={() => onDelete(todo.id)} />
+        )} />
     );
   }
 }
