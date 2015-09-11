@@ -8,8 +8,6 @@ var {
 } = React;
 var Input = require('./Input');
 
-const ESCAPE_KEY = 27;
-
 class TodoItem extends React.Component {
 
   constructor(props) {
@@ -29,24 +27,15 @@ class TodoItem extends React.Component {
     if (this.state.editable) {
       return (
         <Input
-          ref="editField"
           style={styles.editField}
           defaultValue={content}
-          onSubmitEditing={(content) => {
+          returnKeyType="send"
+          autoFocus={true}
+          onSubmitText={(content) => {
             if (content !== '') onEdit(content);
             this.toggleEditable();
           }}
-          onBlur={(event) => {
-            const content = event.target.value;
-            if (content !== '') onEdit(content);
-            this.toggleEditable();
-          }}
-          onKeyDown={(evt) => {
-            if (evt.keyCode === ESCAPE_KEY) {
-              event.preventDefault();
-              this.toggleEditable();
-            }
-          }} />
+          onBlur={this.toggleEditable.bind(this)} />
       );
     }
 
@@ -109,7 +98,7 @@ const styles = StyleSheet.create({
     color: '#ff4081'
   },
   editField: {
-    // width: '100%'
+    height: 39
   }
 });
 

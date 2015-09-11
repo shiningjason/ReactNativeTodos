@@ -8,7 +8,12 @@ class AddTodoInputContainer extends React.Component {
   render() {
     const { addTodo, ...rest } = this.props;
     return (
-      <Input placeholder="新增待辦事項 :p" {...rest} onSubmitText={addTodo} />
+      <Input
+        placeholder="新增待辦事項 :p"
+        returnKeyType="send"
+        autoFocus={true}
+        {...rest}
+        onSubmitText={addTodo} />
     );
   }
 }
