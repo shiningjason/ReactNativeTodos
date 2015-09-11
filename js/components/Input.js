@@ -4,49 +4,32 @@ var {
   TextInput
 } = React;
 
-const ENTER_KEY = 13;
-
 class Input extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: props.defaultValue || '' };
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleKeyDown(event) {
-    switch (event.keyCode) {
-      case ENTER_KEY:
-        this.handleEnter(event);
-        break;
-    }
-
-    const { onKeyDown } = this.props;
-    onKeyDown && onKeyDown(event);
-  }
-
-  handleEnter(event) {
-    event.preventDefault();
-
-    const { onSubmitEditing } = this.props;
-    if (onSubmitEditing) {
-      onSubmitEditing(this.state.value);
-      this.setState({ value: '' });
-    }
+    this.state = { value: undefined };
   }
 
   render() {
+    const {
+      style,
+      onSubmitText,
+      ...rest
+    } = this.props;
+
     return (
       <TextInput
-        {...this.props}
-        type="text"
-        style={[styles.textField, this.props.style]}
+        {...rest}
+        style={[styles.textField, style]}
         value={this.state.value}
-        onChange={this.handleChange.bind(this)}
-        onKeyDown={this.handleKeyDown.bind(this)} />
+        onChangeText={(value) => this.setState({ value })}
+        onSubmitEditing={(event) => {
+          if (onSubmitText) {
+            onSubmitText(event.nativeEvent.text);
+            this.setState({ value: undefined });
+          }
+        }} />
     );
   }
 }
