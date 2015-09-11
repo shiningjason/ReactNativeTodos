@@ -72,10 +72,8 @@ class TodoItem extends React.Component {
             {content}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.deleteBtnContainer}>
-          <Text
-            style={styles.deleteBtn}
-            onClick={onDelete}>X</Text>
+        <TouchableOpacity onPress={onDelete}>
+          <Text style={styles.deleteBtn}>X</Text>
         </TouchableOpacity>
       </View>
     );
