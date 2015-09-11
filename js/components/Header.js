@@ -1,5 +1,6 @@
 var React = require('react-native');
 var {
+  StyleSheet,
   Text,
   View
 } = React;
@@ -25,23 +26,23 @@ Header.defaultProps = {
   username: '路人甲'
 };
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
-    paddingTop: 24,
-    paddingBottom: 24,
-    paddingRight: 16,
-    paddingLeft: 16
+    paddingTop: 32,
+    paddingBottom: 8,
+    paddingHorizontal: 16
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 48,
-    paddingBottom: 31
+    fontSize: 45,
+    textAlign: 'center',
+    paddingBottom: 16
   },
   subTitle: {
-    fontWeight: 'lighter',
+    fontWeight: '300',
     fontSize: 17,
     color: 'rgba(0,0,0,0.54)'
   }
-};
+});
 
 module.exports = Header;

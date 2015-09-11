@@ -1,5 +1,6 @@
 var React = require('react-native');
 var {
+  StyleSheet,
   TextInput
 } = React;
 
@@ -42,7 +43,7 @@ class Input extends React.Component {
       <TextInput
         {...this.props}
         type="text"
-        style={Object.assign({}, styles.textField, this.props.style)}
+        style={[styles.textField, this.props.style]}
         value={this.state.value}
         onChange={this.handleChange.bind(this)}
         onKeyDown={this.handleKeyDown.bind(this)} />
@@ -50,16 +51,14 @@ class Input extends React.Component {
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   textField: {
-    border: '1px solid rgba(0,0,0,0.12)',
-    paddingTop: 8,
-    paddingBottom: 8,
-    paddingRight: 8,
-    paddingLeft: 8,
+    borderColor:'rgba(0,0,0,0.12)',
+    borderWidth: 1,
+    padding: 8,
     height: 32,
     fontSize: 15
   }
-};
+});
 
 module.exports = Input;

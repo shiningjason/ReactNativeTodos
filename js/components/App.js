@@ -1,5 +1,6 @@
 var React = require('react-native');
 var {
+  StyleSheet,
   View
 } = React;
 var shortid = require('shortid');
@@ -21,18 +22,14 @@ class App extends React.Component {
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    maxWidth: 550,
-    margin: '0 auto'
+    flex: 1
   },
   inputContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 8
+    marginBottom: 8,
+    paddingHorizontal: 16
   }
-};
+});
 
 module.exports = App;

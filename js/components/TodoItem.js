@@ -1,5 +1,6 @@
 var React = require('react-native');
 var {
+  StyleSheet,
   SwitchIOS,
   Text,
   TouchableOpacity,
@@ -64,14 +65,14 @@ class TodoItem extends React.Component {
           style={styles.checkbox}
           checked={completed}
           onChange={onToggle} />
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.contentContainer}>
           <Text
-            style={Object.assign({}, styles.content, completed && styles.completed)}
+            style={[styles.content, completed && styles.completed]}
             onDoubleClick={this.toggleEditable.bind(this)}>
             {content}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.deleteBtnContainer}>
           <Text
             style={styles.deleteBtn}
             onClick={onDelete}>X</Text>
@@ -89,40 +90,37 @@ TodoItem.propTypes = {
   onDelete: React.PropTypes.func.isRequired
 };
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 4,
-    paddingBottom: 4,
-    fontSize: 21
+    paddingVertical: 4
   },
   checkbox: {
-    marginRight: 16,
-    marginLeft: 16
+    marginRight: 8
+  },
+  contentContainer: {
+    flex: 1,
+    marginRight: 8
   },
   content: {
-    flex: 1,
+    fontSize: 15,
     color: 'rgba(0,0,0,0.87)'
   },
   completed: {
     fontStyle: 'italic',
-    fontWeight: 'lighter',
+    fontWeight: '300',
     color: 'rgba(0,0,0,0.54)',
-    textDecoration: 'line-through'
+    textDecorationLine: 'line-through'
   },
   deleteBtn: {
-    border: 0,
-    background: 'transparent',
-    marginRight: 16,
-    marginLeft: 16,
-    paddingRight: 8,
-    paddingLeft: 8,
+    paddingHorizontal: 16,
+    fontSize: 15,
     color: '#ff4081'
   },
   editField: {
-    width: '100%'
+    // width: '100%'
   }
-};
+});
 
 module.exports = TodoItem;

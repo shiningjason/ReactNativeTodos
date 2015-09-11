@@ -1,6 +1,8 @@
 var React = require('react-native');
 var {
-  ListView
+  ListView,
+  StyleSheet,
+  View
 } = React;
 var Immutable = require('immutable');
 var TodoItem = require('./TodoItem');
@@ -12,18 +14,21 @@ var ds = new ListView.DataSource({
 class TodoList extends React.Component {
   render() {
     const { todos, onToggle, onEdit, onDelete } = this.props;
+    console.log(todos);
 
     return (
       <ListView
         style={styles.todoList}
-        dataSource={ds.cloneWithRows(todos.values())}
+        dataSource={ds.cloneWithRows(todos.toArray())}
         renderRow={(todo) => (
-          <TodoItem
-            content={todo.content}
-            completed={todo.completed}
-            onToggle={() => onToggle(todo.id)}
-            onEdit={(content) => onEdit(todo.id, content)}
-            onDelete={() => onDelete(todo.id)} />
+          <View style={styles.todoItem}>
+            <TodoItem
+              content={todo.content}
+              completed={todo.completed}
+              onToggle={() => onToggle(todo.id)}
+              onEdit={(content) => onEdit(todo.id, content)}
+              onDelete={() => onDelete(todo.id)} />
+          </View>
         )} />
     );
   }
@@ -36,17 +41,17 @@ TodoList.propTypes = {
   onDelete: React.PropTypes.func.isRequired
 };
 
-const styles = {
+const styles = StyleSheet.create({
   todoList: {
-    padding: 0,
-    listStyle: 'none',
-    borderTop: '1px solid rgba(0,0,0,0.12)'
+    marginHorizontal: 16,
+    borderTopColor: 'rgba(0,0,0,0.12)',
+    borderTopWidth: 1
   },
   todoItem: {
-    paddingTop: 8,
-    paddingBottom: 8,
-    borderBottom: '1px solid rgba(0,0,0,0.12)'
+    paddingVertical: 8,
+    borderBottomColor: 'rgba(0,0,0,0.12)',
+    borderBottomWidth: 1 
   }
-};
+});
 
 module.exports = TodoList;
