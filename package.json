@@ -8,9 +8,9 @@
   "dependencies": {
     "flux-constants": "^0.2.2",
     "immutable": "^3.7.5",
-    "react-native": "^0.10.1",
-    "react-redux": "^2.1.1",
-    "redux": "^2.0.0",
+    "react-native": "^0.11.0",
+    "react-redux": "^2.1.2",
+    "redux": "^3.0.0",
     "shortid": "^2.2.2"
   }
 }
