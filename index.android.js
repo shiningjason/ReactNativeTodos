@@ -10,7 +10,7 @@ var ReactNativeTodos = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <AppContainer platform="ios" />
+        <AppContainer platform="android" />
       </View>
     );
   }

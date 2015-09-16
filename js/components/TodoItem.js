@@ -1,6 +1,7 @@
 var React = require('react-native');
 var {
   StyleSheet,
+  SwitchAndroid,
   SwitchIOS,
   Text,
   TouchableOpacity,
@@ -10,8 +11,8 @@ var Input = require('./Input');
 
 class TodoItem extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = { editable: false };
   }
 
@@ -23,6 +24,7 @@ class TodoItem extends React.Component {
 
   render() {
     const { content, completed, onToggle, onEdit, onDelete } = this.props;
+    const Switcher = this.context.platform === 'ios' ? SwitchIOS : SwitchAndroid;
 
     if (this.state.editable) {
       return (
@@ -41,8 +43,7 @@ class TodoItem extends React.Component {
 
     return (
       <View style={styles.container}>
-        <SwitchIOS
-          type="checkbox"
+        <Switcher
           style={styles.checkbox}
           value={completed}
           onValueChange={onToggle} />
@@ -67,6 +68,10 @@ TodoItem.propTypes = {
   onToggle: React.PropTypes.func.isRequired,
   onEdit: React.PropTypes.func.isRequired,
   onDelete: React.PropTypes.func.isRequired
+};
+
+TodoItem.contextTypes = {
+  platform: React.PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({
