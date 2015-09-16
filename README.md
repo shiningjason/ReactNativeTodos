@@ -1,4 +1,4 @@
-# React Native Todos
+# React Native Todos (ios / android)
 本範例是由 [ReactTodosTutorial](https://github.com/shiningjason1989/ReactTodosTutorial/tree/%2317_redux_connect_view) 轉換成 React Native 的版本
 
 ## 本專案目的
